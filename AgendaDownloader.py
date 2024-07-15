@@ -25,8 +25,9 @@ def download_agendas(projectPath):
             dateString = dateString[0].strip()
             dateObject = datetime.strptime(dateString, "%A, %B %d, %Y")
             formattedDate = dateObject.strftime("%b %d, %Y")
+            year = formattedDate[-4:]
             #We are only scraping through 2015
-            if formattedDate[-4:] == '2014':
+            if year == '2014':
                 break
             meetingName = tds[1].find("a").text
             fileName = agenda_namer(meetingName, formattedDate)
