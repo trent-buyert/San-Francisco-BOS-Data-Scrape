@@ -11,7 +11,7 @@ def pdf_to_html_converter(date, agendaUrl, fileDownloadPath):
             pdf_content = BytesIO(response.content)
             pdf_text = extract_text(pdf_content)
             # Convert the text to HTML
-            html_content = '<html><body><pre>{}</pre></body></html>'.format(escape(pdf_text))
+            html_content = f'<html><body><pre>{escape(pdf_text)}</pre></body></html>'
             # Save the HTML content to a file
             with open(fileDownloadPath, 'w', encoding='utf-8') as file:
                 print(f"Downloading agenda from {date}")
