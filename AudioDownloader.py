@@ -16,8 +16,9 @@ def download_audio_files(projectPath):
         print(formattedDate)
         audioMonth = dateObject.strftime("%B")
         audioYear = dateObject.strftime("%Y")
+        year = formattedDate[-4:]
         # We only want audio files through 2015
-        if formattedDate[-4:] == '2014':
+        if year == '2014':
             break
         # Extracting meeting name from headers allows me to distinguish the type of meeting for naming purposes
         meetingName = tds[0]['headers'][1]
